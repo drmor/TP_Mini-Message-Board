@@ -8,7 +8,7 @@
   <body>
     <ul>
         <% messages.map((message) => { %>
-            <li><%= message.text %> <br>from: <%= message.user%> <br>date: <%= message.added%></li>
+            <li><%= message.text %> <br>from: <%= message.user%> <br>date: <%= message.added.toLocaleString()%></li>
          <% }) %>
     </ul>
   </body>
