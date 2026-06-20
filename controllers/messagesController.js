@@ -1,8 +1,8 @@
 const db = require('../db');
-const Message = require('../models/message');
 
 const message_index = (req, res) => {
   res.render('index', { title: 'Home', db });
+  console.log(db);
 };
 
 const message_new_get = (req, res) => {
@@ -10,9 +10,7 @@ const message_new_get = (req, res) => {
 };
 
 const message_new_post = (req, res) => {
-  const message = new Message(req.body);
-
-  db.push(message);
+  db.push({ text: req.body.message, user: req.body.author, added: new Date() });
 
   res.redirect('/messages');
 };
