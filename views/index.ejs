@@ -8,7 +8,7 @@
   <body>
     <a href="/messages/new">new message</a>
     <ul>
-        <% messages.map((message) => { %>
+        <% db.map((message) => { %>
             <li><%= message.text %> <br>from: <%= message.user%> <br>date: <%= message.added.toLocaleString()%></li>
          <% }) %>
     </ul>
