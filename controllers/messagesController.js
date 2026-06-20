@@ -12,9 +12,14 @@ const messages = [
 ];
 
 const message_index = (req, res) => {
-  res.render('index', { title: 'home', messages });
+  res.render('index', { title: 'Home', messages });
+};
+
+const message_add = (req, res) => {
+  res.render('create', { title: 'New message' });
 };
 
 module.exports = {
   message_index,
+  message_add,
 };
